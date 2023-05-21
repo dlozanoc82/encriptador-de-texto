@@ -1,0 +1,23 @@
+:root {
+    --bakground: #E5E5E5;
+    --white: #fff;
+    --gray-400: #495057;
+    --gray-500: #343A40;
+    --dark-blue-300: #0A3871;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
