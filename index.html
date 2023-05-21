@@ -7,13 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Encriptador</title>
 </head>
 
 <body>
+
+
+    <div class="container">
+        <header class="header">
+            <div class="header__logo">
+                <img class="header__image" src="./img/letter-a.png" alt="Logo Encriptador">
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <form class="form">
+
+                <textarea class="form__textarea" name="encrypt-text" id="encrypt-text" cols="30" rows="7"
+                    placeholder="Ingrese el texto aqui"></textarea>
+
+                <label class="form__label" for="encrypt-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                            clip-rule="evenodd" />
+                    </svg>
+
+                    <span>Solo letras minusculas y sin acento</span>
+                </label>
+
+                <div class="buttons">
+                    <button class="button__encrypt btn">Encriptar</button>
+                    <button class="button__decrypt btn">Desencriptar</button>
+                </div>
+
+            </form>
+
+            <div class="message">
+                <div class="message__info">
+                    <h3>Ningún mensaje fue encontrado </h3>
+                    <p>Ingresa el texto que desees encriptar o desencriptar </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <div class="container">
+        <footer class="footer">
+            <p>Todos los Derechos Reservados</p>
+        </footer>
+    </div>
 
 
     <script src="./index.js" type="module"></script>

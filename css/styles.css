@@ -1,9 +1,13 @@
 :root {
-    --bakground: #E5E5E5;
+    --bakground: #F3F5FC;
     --white: #fff;
     --gray-400: #495057;
     --gray-500: #343A40;
     --dark-blue-300: #0A3871;
+    --dark-blue-400: #072B61;
+    --light-blue-200: #EFF1FA;
+    --font-principal: 'Inter',
+        sans-serif;
 }
 
 html {
@@ -20,4 +24,142 @@ html {
 body {
     font-size: 1.6rem;
     line-height: 1.5;
+    font-family: var(--font-principal);
+    background-color: var(--bakground);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* UTILITES */
+.btn {
+    padding: 2.4rem;
+    border-radius: 2.4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+/* GLOBALS */
+.container {
+    margin: 0 1.6rem;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    height: 9.6rem;
+}
+
+.header__image {
+    width: 100%;
+    height: auto;
+}
+
+/* MAIN */
+.form {
+    padding: 5.5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.form__textarea {
+    font-weight: 400;
+    font-size: 3.2rem;
+    color: var(--dark-blue-300);
+    border: none;
+    background-color: transparent;
+}
+
+.form__textarea:focus-visible {
+    outline: none;
+}
+
+.form__textarea::placeholder {
+    color: var(--dark-blue-300);
+}
+
+.form__label {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--gray-400);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form__label svg {
+    width: 1.7rem;
+    color: #67808E;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.button__encrypt {
+    background-color: var(--dark-blue-300);
+    color: var(--white);
+    border-color: transparent;
+}
+
+.button__encrypt:hover {
+    background-color: var(--dark-blue-400);
+}
+
+.button__decrypt {
+    background-color: var(--white);
+    color: var(--dark-blue-300);
+    border: 2px solid var(--dark-blue-300);
+}
+
+.button__decrypt:hover {
+    background-color: var(--light-blue-200);
+}
+
+
+.message {
+    margin: 4rem .8rem;
+    border: 1px solid transparent;
+    border-radius: 3.2rem;
+    background-color: var(--white);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.message__info {
+    padding: 3.2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.6rem;
+}
+
+.message__info h3 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: var(--gray-500);
+}
+
+.message__info p {
+    margin: 0;
+    color: var(--gray-400);
+}
+
+.footer {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+
 }
