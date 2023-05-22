@@ -45,10 +45,23 @@ img {
     cursor: pointer;
 }
 
+@media(min-width: 1200px) {
+    .btn {
+        width: 30rem;
+    }
+}
+
 /* GLOBALS */
 .container {
     margin: 0 1.6rem;
 }
+
+@media(min-width: 768px) {
+    .container {
+        margin: 0 4rem;
+    }
+}
+
 
 /* HEADER */
 .header {
@@ -62,12 +75,33 @@ img {
     height: auto;
 }
 
+@media(min-width: 1200px) {
+
+    .header {
+        position: relative;
+        height: 0;
+    }
+
+    .header__image {
+        position: absolute;
+        top: 3rem;
+        width: 3.2rem;
+    }
+
+}
+
 /* MAIN */
 .form {
-    padding: 5.5rem 0 0 0;
+    padding-top: 5.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+}
+
+@media(min-width: 1200px) {
+    .form {
+        padding: 5.5rem 0;
+    }
 }
 
 .form__textarea {
@@ -76,6 +110,20 @@ img {
     color: var(--dark-blue-300);
     border: none;
     background-color: transparent;
+    resize: none;
+    overflow: hidden;
+}
+
+@media(min-width: 768px) {
+    .form__textarea {
+        min-height: 55vh;
+    }
+}
+
+@media(min-width: 1200px) {
+    .form__textarea {
+        margin: 10rem 8rem 0 16rem;
+    }
 }
 
 .form__textarea:focus-visible {
@@ -95,15 +143,35 @@ img {
     gap: 1rem;
 }
 
+@media(min-width: 1200px) {
+    .form__label {
+        margin: 0 8rem 0 16rem;
+    }
+}
+
 .form__label svg {
     width: 1.7rem;
     color: #67808E;
 }
 
 .buttons {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
     gap: 2.4rem;
+}
+
+@media(min-width: 768px) {
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: unset;
+    }
+}
+
+@media(min-width: 1200px) {
+    .buttons {
+        display: flex;
+        margin: 0 8rem 3rem 16rem;
+    }
 }
 
 .button__encrypt {
@@ -128,11 +196,17 @@ img {
 
 
 .message {
-    margin: 4rem .8rem;
+    margin: 6.4rem .8rem;
     border: 1px solid transparent;
     border-radius: 3.2rem;
     background-color: var(--white);
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+@media(min-width: 1200px) {
+    .message {
+        margin: 4rem;
+    }
 }
 
 .message__info {
@@ -161,5 +235,11 @@ img {
     text-align: center;
     font-weight: 700;
     font-size: 1.2rem;
+}
 
+@media(min-width: 1200px) {
+    main {
+        display: flex;
+        justify-content: space-between;
+    }
 }
