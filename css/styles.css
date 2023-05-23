@@ -124,7 +124,7 @@ img {
 
 @media(min-width: 1200px) {
     .form__textarea {
-        margin: 10rem 0 0 16rem;
+        margin: 10rem 0 0 13rem;
     }
 }
 
@@ -147,7 +147,7 @@ img {
 
 @media(min-width: 1200px) {
     .form__label {
-        margin: 0 8rem 0 16rem;
+        margin: 0 8rem 0 13rem;
     }
 }
 
@@ -172,7 +172,7 @@ img {
 @media(min-width: 1200px) {
     .buttons {
         display: flex;
-        margin: 0 8rem 3rem 16rem;
+        margin: 0 8rem 3rem 13rem;
     }
 }
 
