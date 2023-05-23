@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 const data = [
     {
         vowel: 'a',
@@ -26,7 +28,53 @@ function autoResize(textarea) {
     textarea.style.height = textarea.scrollHeight + 'px';
 }
 
-function encryptTextWithRegex(text) {
+function copyText(textMessage) {
+
+    navigator.clipboard.writeText(textMessage)
+        .then(() => {
+            Swal.fire(
+                'Good job!',
+                'Texto copiado correctamente',
+                'success'
+            )
+            // Puedes mostrar un mensaje o realizar alguna acción adicional aquí
+        })
+        .catch((error) => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede copiar el texto en el portapapeles'
+            })
+
+            console.error('Error al copiar el texto: ', error);
+            // Maneja el error de acuerdo a tus necesidades
+        });
+}
+
+function validationMessage(message) {
+
+    if (message === '' || message.length < 5) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'El mensaje esta vacio o es muy corto'
+        })
+        return true;
+    }
+
+    if(!(message === message.toLowerCase())){
+        Swal.fire({
+            icon: 'warning',
+            title: 'Advertencia',
+            text: 'El mensaje debe estar en minusculas'
+        })
+        return true;
+    }
+
+    return false;
+}
+
+async function encryptTextWithRegex(text) {
     const regex = new RegExp(data.map(item => item.vowel).join('|'), 'gi');
 
     const encryptedText = text.replace(regex, match => {
@@ -34,14 +82,26 @@ function encryptTextWithRegex(text) {
         return matchingData ? matchingData.encrypt : match;
     });
 
+
+    Swal.fire(
+        'Good job!',
+        'Mensaje encriptado correctamente',
+        'success'
+    )
+
     return encryptedText;
 }
 
-function decryptTextWithRegex(text) {
+async function decryptTextWithRegex(text) {
 
     if (!isEncryptedText(text)) {
-        console.log('Upps el texto no esta encriptado');
-        return;
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Este mensaje no esta encriptado, por favor vuelve a intentarlo!'
+        })
+
+        return null;
     }
 
     const regex = new RegExp(data.map(item => item.encrypt).join('|'), 'gi');
@@ -50,6 +110,13 @@ function decryptTextWithRegex(text) {
         const matchingData = data.find(item => item.encrypt.toLowerCase() === match.toLowerCase());
         return matchingData ? matchingData.vowel : match;
     });
+
+    Swal.fire(
+        'Good job!',
+        'Mensaje desncriptado correctamente',
+        'success'
+    )
+
 
     return decryptedText;
 }
@@ -64,14 +131,12 @@ function isEncryptedText(text) {
     }
 }
 
-// Ejemplo de uso:
-const textoEncriptado = 'Hoberlai mufatndober';
-const textoNoEncriptado = 'Hola mundo';
-
 export{
     encryptTextWithRegex,
     decryptTextWithRegex,
-    autoResize
+    autoResize,
+    validationMessage,
+    copyText
 }
 
 

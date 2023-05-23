@@ -1,5 +1,10 @@
-import { decryptTextWithRegex, encryptTextWithRegex , autoResize} from "./js/main";
-
+import { 
+    decryptTextWithRegex, 
+    encryptTextWithRegex , 
+    autoResize, 
+    validationMessage,
+    copyText
+} from "./js/main";
 
 // FORM
 const formulario = document.getElementById('form');
@@ -18,39 +23,76 @@ btnEncrypt.addEventListener('click', ()  => {
 
 //BTN DECRYPT
 const btnDecrypt = document.getElementById('decrypt');
+btnDecrypt.addEventListener('click', () => {
+    const message = textarea.value;
+    decryptMessage(message);
+})
 
 //CONTAINER MESSAGE
 const containerMessage = document.getElementById('content-message');
-
-
-//Validation Message
-function validationMessage(message) {
-
-    if (message === '' || message.length < 3) {
-        console.log('El mensaje no es el esperado');
-        return true;
+containerMessage.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        const textMessage = document.getElementById('response').innerText;
+        copyText(textMessage);
+        const boton = e.target;
+        console.log('Se ha hecho clic en el botón:', boton.textContent);
     }
+})
 
-    if(!(message === message.toLowerCase())){
-        console.log('El mensaje no esta en minusculas')
-        return true;
-    }
-
-    return false;
+function responseForDefault(){
+    
 }
 
-function encryptMessage(message) {
+function cleanForm(){
+    containerMessage.innerHTML= '';
+}
+
+async function encryptMessage(message) {
+    cleanForm();
+
     if(validationMessage(message)) return;
-    const textEncrypt = encryptTextWithRegex(message);
+    const textEncrypt = await encryptTextWithRegex(message);
 
     let newItem = document.createElement("p");
     newItem.classList.add('message__info__response');
+    newItem.id = "response";
     newItem.innerHTML = textEncrypt;
-    containerMessage.appendChild(newItem);
+
+    let btnCopy = document.createElement("button");
+    btnCopy.classList.add('btn', 'button__copy');
+    btnCopy.innerText = "Copiar";
+    btnCopy.type = "button"; 
+
+    setTimeout(() => {
+        containerMessage.appendChild(newItem);
+        containerMessage.appendChild(btnCopy);
+    }, 1000);
 
 }
 
-function decryptMessage(message) {
+async function decryptMessage(message) {
+    cleanForm();
+
     if(validationMessage(message)) return;
-    const textDecrypt = decryptTextWithRegex(message);
+    const textDecrypt = await decryptTextWithRegex(message);
+
+    if (!textDecrypt) {
+        return null;
+    }
+
+    let newItem = document.createElement("p");
+    newItem.id = "response";
+    newItem.classList.add('message__info__response');
+    newItem.innerHTML = textDecrypt;
+    
+    let btnCopy = document.createElement("button");
+    btnCopy.classList.add('btn', 'button__copy');
+    btnCopy.id = "button__copy";
+    btnCopy.innerText = "Copiar";
+    btnCopy.type = "button"; 
+
+    setTimeout(() => {
+        containerMessage.appendChild(newItem);
+        containerMessage.appendChild(btnCopy);
+    }, 1000);
 }

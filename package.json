@@ -16,5 +16,8 @@
   "license": "MIT",
   "devDependencies": {
     "vite": "^4.3.8"
+  },
+  "dependencies": {
+    "sweetalert2": "^11.7.5"
   }
 }
