@@ -26,7 +26,7 @@
 
     <div class="container">
         <main>
-            <form class="form">
+            <form id="form" class="form">
 
                 <textarea class="form__textarea" name="encrypt-text" id="encrypt-text" cols="30" rows="7"
                     placeholder="Ingrese el texto aqui"></textarea>
@@ -42,16 +42,16 @@
                 </label>
 
                 <div class="buttons">
-                    <button class="button__encrypt btn">Encriptar</button>
-                    <button class="button__decrypt btn">Desencriptar</button>
+                    <button id="encrypt" class="button__encrypt btn">Encriptar</button>
+                    <button id="decrypt" class="button__decrypt btn">Desencriptar</button>
                 </div>
 
             </form>
 
             <div class="message">
-                <div class="message__info">
-                    <h3>Ningún mensaje fue encontrado </h3>
-                    <p>Ingresa el texto que desees encriptar o desencriptar </p>
+                <div id="content-message" class="message__info">
+                    <!-- <h3>Ningún mensaje fue encontrado </h3>
+                    <p>Ingresa el texto que desees encriptar o desencriptar </p> -->
                 </div>
             </div>
         </main>

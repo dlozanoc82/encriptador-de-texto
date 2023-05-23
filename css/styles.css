@@ -100,7 +100,7 @@ img {
 
 @media(min-width: 1200px) {
     .form {
-        padding: 5.5rem 0;
+        padding: 3rem 0;
     }
 }
 
@@ -206,6 +206,7 @@ img {
 @media(min-width: 1200px) {
     .message {
         margin: 4rem;
+        width: 100%;
     }
 }
 
@@ -229,6 +230,13 @@ img {
 .message__info p {
     margin: 0;
     color: var(--gray-400);
+}
+
+.message__info__response {
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: var(--gray-400);
+    text-align: left;
 }
 
 .footer {
