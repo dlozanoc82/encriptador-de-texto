@@ -40,7 +40,16 @@ containerMessage.addEventListener('click', (e) => {
 })
 
 function responseForDefault(){
-    
+    const defaultHtml = `
+        <img src="./img/busqueda.jpg" alt="" srcset="">
+        <h3>Ningún mensaje fue encontrado </h3>
+        <p>Ingresa el texto que desees encriptar o desencriptar </p>
+    `
+    let newItem = document.createElement("div");
+    newItem.innerHTML = defaultHtml;
+    containerMessage.style.justifyContent = 'center';
+    containerMessage.appendChild(newItem);
+
 }
 
 function cleanForm(){
@@ -50,7 +59,10 @@ function cleanForm(){
 async function encryptMessage(message) {
     cleanForm();
 
-    if(validationMessage(message)) return;
+    if(validationMessage(message)) {
+        responseForDefault();
+        return null;
+    };
     const textEncrypt = await encryptTextWithRegex(message);
 
     let newItem = document.createElement("p");
@@ -64,6 +76,7 @@ async function encryptMessage(message) {
     btnCopy.type = "button"; 
 
     setTimeout(() => {
+        containerMessage.style.justifyContent = 'space-between';
         containerMessage.appendChild(newItem);
         containerMessage.appendChild(btnCopy);
     }, 1000);
@@ -73,10 +86,14 @@ async function encryptMessage(message) {
 async function decryptMessage(message) {
     cleanForm();
 
-    if(validationMessage(message)) return;
+    if(validationMessage(message)) {
+        responseForDefault();
+        return null;
+    };
     const textDecrypt = await decryptTextWithRegex(message);
 
     if (!textDecrypt) {
+        responseForDefault();
         return null;
     }
 
@@ -92,6 +109,7 @@ async function decryptMessage(message) {
     btnCopy.type = "button"; 
 
     setTimeout(() => {
+        containerMessage.style.justifyContent = 'space-between';
         containerMessage.appendChild(newItem);
         containerMessage.appendChild(btnCopy);
     }, 1000);
