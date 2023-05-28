@@ -79,4 +79,4 @@ Este proyecto se distribuye bajo la Licencia MIT. Consulta el archivo LICENSE pa
 
 ## Contacto
 
-Si tienes alguna pregunta o comentario sobre este proyecto, puedes ponerte en contacto con el equipo de desarrollo a través de nuestro correo electrónico o redes sociales.
+Si tienes alguna pregunta o comentario sobre este proyecto, puedes ponerte en contacto conmigo a través de mi correo electrónico o redes sociales.
