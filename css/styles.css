@@ -3,9 +3,9 @@
     --white: #fff;
     --gray-400: #495057;
     --gray-500: #343A40;
-    --dark-blue-300: #0A3871;
-    --dark-blue-400: #072B61;
-    --light-blue-200: #EFF1FA;
+    --dark-blue-300: #0f055e;
+    --dark-blue-400: #00003d;
+    --light-blue-200: #e8e2fa;
     --font-principal: 'Inter',
         sans-serif;
 }
@@ -26,7 +26,8 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     font-family: var(--font-principal);
-    background-color: var(--bakground);
+    background-image: linear-gradient(90deg, rgb(235, 244, 245) 0%, rgb(181, 198, 224) 100%);
+    background: -moz-linear-gradient(90deg, rgb(235, 244, 245) 0%, rgb(181, 198, 224) 100%);
 }
 
 img {
@@ -38,8 +39,9 @@ img {
 .btn {
     padding: 2.4rem;
     border-radius: 2.4rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 400;
+    transition: background-color .2s ease-in-out;
 }
 
 .btn:hover {
@@ -87,7 +89,7 @@ img {
     .header__image {
         position: absolute;
         top: 3rem;
-        width: 3.2rem;
+        width: 6.4rem;
     }
 
 }
@@ -202,6 +204,9 @@ img {
     border: 2px solid var(--dark-blue-300);
 }
 
+.button__copy:hover {
+    background-color: var(--light-blue-200);
+}
 
 .message {
     margin: 6.4rem .8rem;
