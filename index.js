@@ -38,8 +38,6 @@ containerMessage.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
         const textMessage = document.getElementById('response').innerText;
         copyText(textMessage);
-        const boton = e.target;
-        console.log('Se ha hecho clic en el botón:', boton.textContent);
     }
 })
 
