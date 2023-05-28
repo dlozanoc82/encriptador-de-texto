@@ -6,8 +6,7 @@
     --dark-blue-300: #0f055e;
     --dark-blue-400: #00003d;
     --light-blue-200: #e8e2fa;
-    --font-principal: 'Inter',
-        sans-serif;
+    --font-principal: 'Inter', sans-serif;
 }
 
 html {
@@ -25,7 +24,7 @@ html {
 body {
     font-size: 1.6rem;
     line-height: 1.5;
-    font-family: var(--font-principal);
+    font-family: 'Inter', sans-serif;
     background-image: linear-gradient(90deg, rgb(235, 244, 245) 0%, rgb(181, 198, 224) 100%);
     background: -moz-linear-gradient(90deg, rgb(235, 244, 245) 0%, rgb(181, 198, 224) 100%);
 }

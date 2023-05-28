@@ -1,3 +1,7 @@
+import './css/normalize.css';
+import './css/styles.css';
+import img from './img/busqueda.jpg'
+
 import { 
     decryptTextWithRegex, 
     encryptTextWithRegex , 
@@ -41,7 +45,7 @@ containerMessage.addEventListener('click', (e) => {
 
 function responseForDefault(){
     const defaultHtml = `
-        <img src="./img/busqueda.jpg" alt="" srcset="">
+        <img src="${img}" alt="Mensaje encriptado o desencriptado">
         <h3>Ningún mensaje fue encontrado </h3>
         <p>Ingresa el texto que desees encriptar o desencriptar </p>
     `
