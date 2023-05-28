@@ -35,6 +35,10 @@ img {
     display: block;
 }
 
+p {
+    margin: 0;
+}
+
 /* UTILITES */
 .btn {
     padding: 2.4rem;
